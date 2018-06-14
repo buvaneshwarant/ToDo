@@ -16,7 +16,11 @@ Date date = new Date();
 <body>
 	
 	<form action="/login.do" method="post">
-	Enter your name <input type="text" name ="name"/>
+	
+	<p><font color="red">${errorMessage }</font></p>
+			Name:	  <input type="text" name ="name"/>
+			Password: <input type="password" name = "password"/>
+			
 					<input type="submit" value = "Login"/>
 	</form>
 </body>
