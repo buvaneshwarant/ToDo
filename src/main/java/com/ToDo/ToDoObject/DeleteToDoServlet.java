@@ -9,24 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ToDo.ToDoObject.ToDoService;
 
-@WebServlet(urlPatterns="/todo.do")
-public class ToDoServlet extends HttpServlet{
+@WebServlet(urlPatterns="/delete-todo.do")
+public class DeleteToDoServlet extends HttpServlet{
 	
 	private ToDoService todoService = new ToDoService(); 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("todos", todoService.retrieveToDo());
-		request.setAttribute("password", request.getParameter("password")); 
-		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
+		todoService.deleteToDo(new ToDo(request.getParameter("todo")));
+
 		
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String newToDo = request.getParameter("todo"); 
-		todoService.addToDo(new ToDo(newToDo));
 		
 		response.sendRedirect("/todo.do");
+		
 		
 	}
 	

@@ -17,4 +17,13 @@ public class ToDoService {
 		return todos; 
 	}
 	
+	public void addToDo(ToDo todo) {
+		todos.add(todo); 
+	}
+	
+	public void deleteToDo(ToDo todo) {
+		todos.remove(todo); 
+	}
+
+	
 }
