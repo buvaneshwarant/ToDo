@@ -1,4 +1,4 @@
-package com.ToDo;
+package com.ToDo.login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import com.ToDo.ToDoObject.ToDoService;
 @WebServlet(urlPatterns="/login.do")
 public class LoginServlet extends HttpServlet{
 	
-	private UserValidationService service = new UserValidationService(); 
+	private LoginService service = new LoginService(); 
 	private ToDoService todoService = new ToDoService(); 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
