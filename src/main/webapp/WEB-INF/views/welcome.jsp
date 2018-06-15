@@ -9,6 +9,10 @@
 </head>
 
 <body>
- Welcome ${name} and your password is ${password }
+ Welcome ${name}
+<p>your todos are </p>
+
+<p>${todos}</p>
+
 </body>
 </html>
