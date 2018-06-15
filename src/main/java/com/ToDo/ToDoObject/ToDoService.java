@@ -25,5 +25,4 @@ public class ToDoService {
 		todos.remove(todo); 
 	}
 
-	
 }
