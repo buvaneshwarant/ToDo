@@ -49,10 +49,9 @@
 		<p>
 			<font color="red">${errorMessage}</font>
 		</p>
-		<form method="POST" action="/add-todo.do">
-			New Todo : <input name="todo" type="text" /> <input name="add"
-				type="submit" />
-		</form>
+		
+		<a href="/add-todo.do"> Add new todo </a>
+
 	</div>
 
 	<footer class="footer">

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ToDo.ToDoObject.ToDoService;
 
-@WebServlet(urlPatterns="/todo.do")
+@WebServlet(urlPatterns="/list-todos.do")
 public class ListToDoServlet extends HttpServlet{
 	
 	private ToDoService todoService = new ToDoService(); 
@@ -17,9 +17,8 @@ public class ListToDoServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("todos", todoService.retrieveToDo());
 		request.setAttribute("password", request.getParameter("password")); 
-		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/list-todos.jsp").forward(request, response);
 		
 	}
-	
 	
 }
