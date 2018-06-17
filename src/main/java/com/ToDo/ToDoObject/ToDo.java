@@ -2,10 +2,12 @@ package com.ToDo.ToDoObject;
 
 public class ToDo {
 	private String name;
+	private String category; 
 	
-	public ToDo(String name) {
+	public ToDo(String name, String category) {
 		super(); 
 		this.name = name;
+		this.category = category; 
 	}
 	
 	public String getName() {
@@ -18,7 +20,7 @@ public class ToDo {
 
 	@Override
 	public String toString() {
-		return "ToDo [name=" + name + "]";
+		return "ToDo [name=" + name + ", category=" + category + "]";
 	}
 
 	@Override
@@ -44,6 +46,14 @@ public class ToDo {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 }

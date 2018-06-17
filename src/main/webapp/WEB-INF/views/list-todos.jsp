@@ -37,20 +37,32 @@
 
 	<div class="container">
 		<H1>Welcome ${name}</H1>
-
-		Your Todos are
-		<ol>
-			<c:forEach items="${todos}" var="todo">
-				<li>${todo.name}&nbsp;<a
-					href="/delete-todo.do?todo=${todo.name}">Delete</a></li>
-			</c:forEach>
-		</ol>
+		
+		<table  class="table table-striped" >
+			<caption>Your Todos are </caption>
+			<thead>
+				<th>Description</th>
+				<th>Category</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<c:forEach items ="${todos}" var="todo">
+				<tr>
+					<td>${todo.name}</td>
+					<td>${todo.category}</td>
+					<td>&nbsp;&nbsp;
+					 <a class="btn btn-danger" href="/delete-todo.do?todo=${todo.name}&category=${todo.category}">Delete</a>
+					</td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 
 		<p>
 			<font color="red">${errorMessage}</font>
 		</p>
 		
-		<a href="/add-todo.do"> Add new todo </a>
+		<a class="btn btn-success" href="/add-todo.do"> Add new todo </a>
 
 	</div>
 
